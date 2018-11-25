@@ -1,0 +1,47 @@
+body {
+	margin: 0px;
+	background-image: url(../images/bg1.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 800px;
+}
+
+#middle {
+	position: absolute;
+	top: 40%;
+	left: 40%;
+	background-color: rgba(250, 250, 250, 0.6);
+	display: block;
+	width: 240px;
+	height: 150px;
+	border-radius: 20px;
+}
+
+a {
+	position: relative;
+	left: 8px;
+	top: 10px;
+	text-decoration: none;
+	color: dimgray;
+}
+
+#in {
+	position: relative;
+	left: 110px;
+	top: 10px;
+	height: 25px;
+	border-radius: 25px;
+}
+/*#out{*/
+	/*float: right;*/
+	/*margin-right: 40px;*/
+	/*margin-top: 30px;*/
+	/*background: #303030;*/
+	/*border-radius:25px;*/
+	/*text-align:center;*/
+	/*line-height: 30px;*/
+	/*color:greenyellow;*/
+	/*width: 80px;*/
+	/*height: 30px;*/
+/*}*/
