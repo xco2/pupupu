@@ -1,4 +1,19 @@
 $(document).ready(function () {
+    loadall();
+});
+
+window.onresize = function() {
+    loadall();
+    if($("#filetype").val()=="png"){
+        pngload();
+    }
+    if($("#filetype").val()=="jpg"){
+        jpgload();
+    }
+
+};
+
+function loadall() {
     var hh = document.documentElement.clientHeight;
     var ww = document.documentElement.clientWidth;
     var ho = hh * 0.7;
@@ -33,10 +48,12 @@ $(document).ready(function () {
             case "jpg":
                 yinchang();
                 document.getElementById("jpg").style.cssText = "display:block !important;";
+                jpgload();
                 break;
             case "png":
                 yinchang();
                 document.getElementById("png").style.cssText = "display:block !important;";
+                pngload();
                 break;
             case "pdf":
                 yinchang();
@@ -66,9 +83,9 @@ $(document).ready(function () {
         var img=this.children;
         window.open(img[0].src);
     })
-});
+}
 
-$("#jpg").ready(function () {
+function jpgload() {
     var per = document.getElementById("jpg");
     var pw = per.offsetWidth;//div的宽度
     var mun = Math.floor(pw / 220);//一行放多少个
@@ -102,9 +119,9 @@ $("#jpg").ready(function () {
         }
     }
     document.getElementById("jpg").style.height = maxh + "px";
-})
+}
 
-$("#png").ready(function () {
+function pngload() {
     var per = document.getElementById("png");
     var pw = per.offsetWidth;//div的宽度
     var mun = Math.floor(pw / 220);//一行放多少个
@@ -137,8 +154,12 @@ $("#png").ready(function () {
             maxh = h[i];
         }
     }
-    document.getElementById("png").style.height = maxh + "px";
-    document.getElementById("png").style.display="none";
+    per.style.height = maxh + "px";
+}
+
+$("#jpg").ready(function () {
+    jpgload();
 })
+
 
 
