@@ -12,6 +12,7 @@ function autosize() {
     var div = document.getElementById("imgdiv");
     var img = $("#imgdiv img")[0];
     var wh = img.offsetWidth / img.offsetHeight;
+    var ctrl=document.getElementById("ctrlpohot")
     if (img.offsetHeight > img.offsetWidth) {
         var imgh = hh * 0.8;
         var imgw = (hh * 0.8) * wh;
@@ -33,6 +34,7 @@ function autosize() {
     }
     div.style.height = img.offsetHeight + "px";
     div.style.width = img.offsetWidth + "px";
-    div.style.top = (hh - img.offsetHeight - 10) / 2 + "px";
     div.style.left = (ww - img.offsetWidth - 10) / 2 + "px";
+    ctrl.style.width = img.offsetWidth + "px";
+    ctrl.style.left = (ww - img.offsetWidth - 10) / 2 + "px";
 }

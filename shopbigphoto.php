@@ -18,5 +18,8 @@
 <div id="imgdiv">
     <img src="<?php echo "upload/" . $_GET['name']; ?>" alt="">
 </div>
+<div id="ctrlpohot">
+
+</div>
 </body>
 </html>
