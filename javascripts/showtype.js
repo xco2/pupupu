@@ -83,6 +83,7 @@ function loadall() {
         var img=this.children;
         window.open(img[0].src);
     })
+    document.getElementById("png").style.display="none";
 }
 
 function jpgload() {

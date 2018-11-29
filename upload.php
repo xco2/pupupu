@@ -36,12 +36,16 @@ if (isset($_FILES["photo"]["error"])) {
                 if ($conn) {
                     mysqli_select_db($conn, 'poi') or die('指定的数据库不存在');
                     mysqli_query($conn, 'SET NAMES UTF8') or die('字符集错误');
+                    date_default_timezone_set('PRC');
+                    $time=time();
                     mysqli_query($conn, "INSERT INTO filepath (
 		            Fname,
-		            Ftype
+		            Ftype,
+		            uptime
 	                ) values (
 		            '{$fname[0]}',
-		            '{$fname[1]}'
+		            '{$fname[1]}',
+		            {$time}
 	                );"
                     ) or die("SQL执行失败" . mysqli_error($conn));
                 }

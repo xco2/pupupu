@@ -23,6 +23,11 @@
     </script>
 </head>
 <body>
+
+<div id="showbigphoto">
+
+</div>
+
 <a href="logout.php">
     <div id="out">登出</div>
 </a>
@@ -52,12 +57,12 @@
         if ($conn) {
             mysqli_select_db($conn, 'poi') or die('指定的数据库不存在');
             mysqli_query($conn, 'SET NAMES UTF8') or die('字符集错误');
-            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='jpg'OR Ftype='jpeg';") or die("SQL执行失败" . mysqli_error($conn));
+            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='jpg' OR Ftype='jpeg' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
             $rows = mysqli_fetch_row($allarticle); ?>
             <!--        JPG图片-->
             <div id="jpg" style="display: none;"><h3>jpg/jpeg</h3>
                 <?php
-                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='jpg' OR Ftype='jpeg';") or die("SQL执行失败" . mysqli_error($conn));
+                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='jpg' OR Ftype='jpeg' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
                 $mun = mysqli_fetch_row($amount);
                 echo "<div class='amount'>----------------------<span id='jpg_amoun'>" . $mun[0] . "</span>(条)</div>";
                 while ($rows != null) {
@@ -72,12 +77,12 @@
             </div>
             <!--        PNG图片----------------------------------------------------->
             <?php
-            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='png';") or die("SQL执行失败" . mysqli_error($conn));
+            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='png' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
             $rows = mysqli_fetch_row($allarticle);
             ?>
             <div id="png"><h3>png</h3>
                 <?php
-                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='png'") or die("SQL执行失败" . mysqli_error($conn));
+                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='png' ORDER  BY uptime DESC") or die("SQL执行失败" . mysqli_error($conn));
                 $mun = mysqli_fetch_row($amount);
                 echo "<div class='amount'>----------------------<span id='png_amoun'>" . $mun[0] . "</span>(条)</div>";
                 while ($rows != null) {
@@ -92,12 +97,12 @@
             </div>
             <!--    PDF文件----------------------------------------------------->
             <?php
-            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='pdf';") or die("SQL执行失败" . mysqli_error($conn));
+            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='pdf' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
             $rows = mysqli_fetch_row($allarticle);
             ?>
             <div id="pdf" style="display: none;"><h3>pdf</h3>
                 <?php
-                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='pdf'") or die("SQL执行失败" . mysqli_error($conn));
+                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='pdf' ORDER  BY uptime DESC") or die("SQL执行失败" . mysqli_error($conn));
                 $mun = mysqli_fetch_row($amount);
                 echo "<div class='amount'>----------------------<span id='pdf_amoun'>" . $mun[0] . "</span>(条)</div>";
                 while ($rows != null) {
@@ -114,12 +119,12 @@
             </div>
             <!--    apk文件----------------------------------------------------->
             <?php
-            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='apk';") or die("SQL执行失败" . mysqli_error($conn));
+            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='apk' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
             $rows = mysqli_fetch_row($allarticle);
             ?>
             <div id="apk" style="display: none;"><h3>apk</h3>
                 <?php
-                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='apk'") or die("SQL执行失败" . mysqli_error($conn));
+                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='apk' ORDER  BY uptime DESC") or die("SQL执行失败" . mysqli_error($conn));
                 $mun = mysqli_fetch_row($amount);
                 echo "<div class='amount'>----------------------<span id='apk_amoun'>" . $mun[0] . "</span>(条)</div>";
                 while ($rows != null) {
@@ -136,12 +141,12 @@
             </div>
             <!--     rar文件----------------------------------------------------->
             <?php
-            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='rar';") or die("SQL执行失败" . mysqli_error($conn));
+            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='rar' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
             $rows = mysqli_fetch_row($allarticle);
             ?>
             <div id="rar" style="display: none;"><h3>rar</h3>
                 <?php
-                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='rar'") or die("SQL执行失败" . mysqli_error($conn));
+                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='rar' ORDER  BY uptime DESC") or die("SQL执行失败" . mysqli_error($conn));
                 $mun = mysqli_fetch_row($amount);
                 echo "<div class='amount'>----------------------<span id='rar_amoun'>" . $mun[0] . "</span>(条)</div>";
                 while ($rows != null) {
@@ -158,12 +163,12 @@
             </div>
             <!--     psd文件----------------------------------------------------->
             <?php
-            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='psd';") or die("SQL执行失败" . mysqli_error($conn));
+            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='psd' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
             $rows = mysqli_fetch_row($allarticle);
             ?>
             <div id="psd" style="display: none;"><h3>psd</h3>
                 <?php
-                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='psd'") or die("SQL执行失败" . mysqli_error($conn));
+                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='psd' ORDER  BY uptime DESC") or die("SQL执行失败" . mysqli_error($conn));
                 $mun = mysqli_fetch_row($amount);
                 echo "<div class='amount'>----------------------<span id='psd_amoun'>" . $mun[0] . "</span>(条)</div>";
                 while ($rows != null) {
@@ -173,7 +178,6 @@
                             <?php echo $rows[0]; ?>
                         </div>
                     </a>
-                    <br>
                     <?php
                     $rows = mysqli_fetch_row($allarticle);
                 }
@@ -181,12 +185,12 @@
             </div>
             <!--    world文件----------------------------------------------------->
             <?php
-            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='docx';") or die("SQL执行失败" . mysqli_error($conn));
+            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='docx' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
             $rows = mysqli_fetch_row($allarticle);
             ?>
             <div id="docx" style="display: none;"><h3>docx</h3>
                 <?php
-                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='docx'") or die("SQL执行失败" . mysqli_error($conn));
+                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='docx' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
                 $mun = mysqli_fetch_row($amount);
                 echo "<div class='amount'>----------------------<span id='docx_amoun'>" . $mun[0] . "</span>(条)</div>";
                 while ($rows != null) {
