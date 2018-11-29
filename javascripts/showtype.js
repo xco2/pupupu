@@ -81,7 +81,9 @@ function loadall() {
 
     $(".tupian").click(function () {
         var img=this.children;
-        window.open(img[0].src);
+        var name=img[0].src.split('//');
+        name=name[1].split('/');
+        window.open("showbigphoto.php?name="+name[2]);
     })
     document.getElementById("png").style.display="none";
 }

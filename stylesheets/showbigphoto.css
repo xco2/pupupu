@@ -1,0 +1,15 @@
+body {
+    position: absolute;
+    margin: 0;
+}
+
+#imgdiv {
+    background-color: rgba(0, 0, 0, 0.65);
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#imgdiv img {
+    margin: 0;
+}

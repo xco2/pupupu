@@ -24,10 +24,6 @@
 </head>
 <body>
 
-<div id="showbigphoto">
-
-</div>
-
 <a href="logout.php">
     <div id="out">登出</div>
 </a>
