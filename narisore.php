@@ -84,7 +84,7 @@
                 while ($rows != null) {
                     ?>
                     <div class="tupian">
-                        <?php echo "<img src='./upload/" . $rows[0] . "' alt='" . $rows[0] . "'>"; ?>
+                        <?php echo "<img src='./upload/" . $rows[0] . ".png' alt='" . $rows[0] . "'>"; ?>
                     </div>
                     <?php
                     $rows = mysqli_fetch_row($allarticle);

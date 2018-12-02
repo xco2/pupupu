@@ -1,5 +1,14 @@
 $(document).ready(function () {
     autosize();
+    $("#imgdiv").click(function morebig() {
+        var img=document.getElementById("morebig");
+        img.style.display="block";
+        $("body")[0].height=img.offsetHeight;
+    });
+    $("#morebig").click(function morebig() {
+        var img=document.getElementById("morebig");
+        img.style.display="none";
+    });
 })
 
 window.onresize = function () {
@@ -12,7 +21,7 @@ function autosize() {
     var div = document.getElementById("imgdiv");
     var img = $("#imgdiv img")[0];
     var wh = img.offsetWidth / img.offsetHeight;
-    var ctrl=document.getElementById("ctrlpohot")
+    var ctrl = document.getElementById("ctrlpohot")
     if (img.offsetHeight > img.offsetWidth) {
         var imgh = hh * 0.8;
         var imgw = (hh * 0.8) * wh;
@@ -38,3 +47,5 @@ function autosize() {
     ctrl.style.width = img.offsetWidth + "px";
     ctrl.style.left = (ww - img.offsetWidth - 10) / 2 + "px";
 }
+
+
