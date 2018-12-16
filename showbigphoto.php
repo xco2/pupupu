@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <?php
+    header("Content-Type: text/html;charset=utf-8");
     if (!isset($_COOKIE['user'])) {
         //echo "请登录";
         echo "<script>location.href='index.php'</script>";
@@ -16,7 +17,6 @@
 </head>
 <body>
 <div id="imgdiv" role="presentation">
-<!--    <a href="--><?php //echo "upload/" . $_GET['name']; ?><!--" rel="noopener" target="_blank"><img src="--><?php //echo "upload/" . $_GET['name']; ?><!--" alt=""></a>-->
     <img src="<?php echo "upload/" . $_GET['name']; ?>" alt="">
 </div>
 <div id="ctrlpohot">
@@ -43,6 +43,12 @@
     }
     ?>
 </div>
+<?php
+if ($_COOKIE['user'] == "xco2") {
+    echo "<div id=\"delet\" ><a href='delete.php?name=".$rows[0]."&type=".$rows[1]."'>×</a></div>";
+}
+?>
+
 <div id="morebig">
     <img src="<?php echo "upload/" . $_GET['name']; ?>" alt="">
 </div>

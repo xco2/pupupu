@@ -47,5 +47,7 @@ function autosize() {
     ctrl.style.width = img.offsetWidth + "px";
     ctrl.style.left = (ww - img.offsetWidth - 10) / 2 + "px";
 }
+$('#delet').onclick(function(){
 
+})
 

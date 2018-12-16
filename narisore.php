@@ -181,12 +181,12 @@
             </div>
             <!--    world文件----------------------------------------------------->
             <?php
-            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='docx' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
+            $allarticle = mysqli_query($conn, "SELECT * FROM filepath WHERE Ftype='docx' OR Ftype='doc' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
             $rows = mysqli_fetch_row($allarticle);
             ?>
             <div id="docx" style="display: none;"><h3>docx</h3>
                 <?php
-                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='docx' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
+                $amount = mysqli_query($conn, "SELECT COUNT(Fname) FROM filepath WHERE Ftype='docx' OR Ftype='doc' ORDER  BY uptime DESC;") or die("SQL执行失败" . mysqli_error($conn));
                 $mun = mysqli_fetch_row($amount);
                 echo "<div class='amount'>----------------------<span id='docx_amoun'>" . $mun[0] . "</span>(条)</div>";
                 while ($rows != null) {
