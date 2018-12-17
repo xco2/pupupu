@@ -1,5 +1,9 @@
 $(document).ready(function () {
     loadall();
+    var parentDiv=document.getElementById("jpg");
+    parentDiv.addEventListener("mouseover", function () {
+        jpgload();
+    },false);
 });
 
 window.onresize = function() {
@@ -163,6 +167,7 @@ function pngload() {
 $("#jpg").ready(function () {
     jpgload();
 })
+
 
 
 
